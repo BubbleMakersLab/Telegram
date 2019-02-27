@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coucou</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript">
+            function getResponse()
+            {
+                var token = "749815043:AAF1huIV7cfb922J2mS8HrmeDrLdS8ehmNs";
+				var chat_id = "735931622";
+				//var url = "https://api.telegram.org/bot" + token + "/getUpdates";
+				var url = "https://api.telegram.org/bot" + token + "/sendMessage?chat_id=" + chat_id + "&text='automated posting from JS code'"
+
+                $.ajax({
+                type: 'POST',
+                url: url,
+                data: {},
+                dataType: 'json',
+                success: function(data) 
+                { alert('got here with data'); },
+                error: function() { alert('something bad happened'); }
+                });
+
+            }
+		</script>		
+    </head>
+    <body>
+	
+		<label for="name">Telegram test: </label>
+		<button id="test" onClick="getResponse()">test</button>
+
+
+	
+    </body>
+</html>
